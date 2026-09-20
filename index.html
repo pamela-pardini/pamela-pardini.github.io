@@ -2,22 +2,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Pamela Alejandra Pardini — Technical Project Manager, R&D, DeepTech & MedTech, Photonics." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Pamela Alejandra Pardini — Technical Project Manager | R&D | DeepTech & MedTech | Photonics">
+
   <title>Pamela Alejandra Pardini — Technical Project Manager | R&D | DeepTech & MedTech</title>
 
   <style>
     :root {
       --bg: #faf9fc;
       --surface: #ffffff;
-      --text: #24212b;
-      --muted: #6d6875;
+      --surface-soft: #f4f0f8;
+      --text: #25212c;
+      --muted: #6f6878;
       --accent: #7657a8;
-      --accent-2: #3b9c99;
-      --border: #e9e4ef;
-      --shadow: 0 12px 35px rgba(50, 35, 75, 0.08);
-      --max-width: 1080px;
+      --accent-light: #eee8f7;
+      --teal: #3b9c99;
+      --border: #e8e2ee;
+      --shadow: 0 18px 45px rgba(55, 37, 80, 0.09);
+      --max: 1120px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #18161c;
+      --surface: #211e26;
+      --surface-soft: #29252f;
+      --text: #f3eff7;
+      --muted: #b6aebb;
+      --accent: #b69be0;
+      --accent-light: #30273d;
+      --teal: #6bc2bd;
+      --border: #39333f;
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
     }
 
     * {
@@ -31,10 +48,18 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.65;
+      transition: background 0.25s ease, color 0.25s ease;
     }
 
     a {
@@ -46,168 +71,333 @@
       text-decoration: underline;
     }
 
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* NAVIGATION */
+
     nav {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(250, 249, 252, 0.94);
-      backdrop-filter: blur(12px);
+      z-index: 100;
+      background: color-mix(in srgb, var(--bg) 90%, transparent);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
 
     .nav-inner {
-      max-width: var(--max-width);
+      max-width: var(--max);
       margin: auto;
-      padding: 16px 24px;
+      padding: 15px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     .nav-name {
-      font-weight: 700;
+      font-weight: 750;
       color: var(--text);
+      font-size: 0.95rem;
     }
 
     .nav-links {
       display: flex;
-      gap: 24px;
-      font-size: 0.92rem;
+      align-items: center;
+      gap: 23px;
+      font-size: 0.86rem;
     }
 
     .nav-links a {
       color: var(--muted);
     }
 
-    header {
-      max-width: var(--max-width);
-      margin: auto;
-      padding: 90px 24px 70px;
+    .theme-toggle {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 85px 0 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid var(--surface);
+      box-shadow: var(--shadow);
+      background: linear-gradient(135deg, var(--accent-light), var(--surface-soft));
+    }
+
+    .photo-fallback {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 3.5rem;
+      font-weight: 800;
+      border: 6px solid var(--surface);
+      box-shadow: var(--shadow);
     }
 
     .eyebrow {
       color: var(--accent);
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      margin-bottom: 18px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
     }
 
     h1 {
-      font-size: clamp(2.5rem, 6vw, 4.8rem);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
+      font-size: clamp(2.7rem, 6vw, 5.2rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
       margin-bottom: 18px;
     }
 
-    .hero-role {
-      font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+    .hero-title {
+      font-size: clamp(1.1rem, 2.3vw, 1.45rem);
       color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 24px;
+      font-weight: 650;
+      margin-bottom: 22px;
     }
 
-    .hero-description {
-      max-width: 850px;
-      font-size: 1.08rem;
+    .hero-text {
       color: var(--muted);
+      max-width: 800px;
+      font-size: 1.06rem;
     }
 
-    .hero-meta {
-      margin-top: 28px;
+    .hero-contact {
+      margin-top: 23px;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
     }
+
+    .hero-contact a {
+      margin-right: 5px;
+    }
+
+    /* SECTIONS */
 
     section {
-      max-width: var(--max-width);
-      margin: auto;
-      padding: 70px 24px;
+      padding: 72px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 35px;
     }
 
     .section-label {
-      color: var(--accent);
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.78rem;
+      letter-spacing: 0.13em;
+      font-size: 0.72rem;
       font-weight: 800;
-      margin-bottom: 10px;
+      color: var(--teal);
+      margin-bottom: 7px;
     }
 
     h2 {
-      font-size: 2rem;
-      letter-spacing: -0.025em;
-      margin-bottom: 30px;
+      font-size: clamp(1.8rem, 3vw, 2.45rem);
+      letter-spacing: -0.035em;
+      line-height: 1.15;
     }
 
-    .summary {
-      max-width: 900px;
-      font-size: 1.08rem;
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 0.8fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .about-text {
       color: var(--muted);
+      font-size: 1.05rem;
     }
 
-    .competencies {
+    .about-text p + p {
+      margin-top: 18px;
+    }
+
+    .about-side {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-side-title {
+      font-weight: 750;
+      margin-bottom: 18px;
+    }
+
+    .about-side-item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-side-item:last-child {
+      border-bottom: none;
+    }
+
+    .about-side-number {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+
+    .about-side-label {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* COMPETENCIES */
+
+    .chips {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
 
-    .competency {
+    .chip {
       background: var(--surface);
       border: 1px solid var(--border);
-      padding: 9px 14px;
       border-radius: 999px;
-      font-size: 0.9rem;
+      padding: 9px 14px;
       color: var(--text);
+      font-size: 0.88rem;
     }
 
-    .experience-item {
+    .chip:hover {
+      border-color: var(--accent);
+    }
+
+    /* EXPERIENCE */
+
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 10px;
+      bottom: 10px;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .experience {
+      position: relative;
+      margin-bottom: 38px;
+    }
+
+    .experience::before {
+      content: "";
+      position: absolute;
+      left: -28px;
+      top: 8px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 0 1px var(--accent);
+    }
+
+    .experience-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 30px;
-      margin-bottom: 24px;
+      padding: 29px;
       box-shadow: var(--shadow);
     }
 
-    .experience-title {
+    .experience-role {
       font-size: 1.35rem;
-      font-weight: 750;
+      font-weight: 760;
       margin-bottom: 5px;
     }
 
     .experience-company {
       color: var(--accent);
       font-weight: 600;
-      margin-bottom: 22px;
+      margin-bottom: 21px;
     }
 
-    .experience-item ul {
-      padding-left: 22px;
+    .experience-card ul {
+      padding-left: 21px;
     }
 
-    .experience-item li {
-      margin-bottom: 11px;
+    .experience-card li {
       color: var(--muted);
+      margin-bottom: 10px;
     }
 
-    .experience-item li::marker {
-      color: var(--accent-2);
+    .experience-card li:last-child {
+      margin-bottom: 0;
     }
 
-    .achievement-list {
-      list-style: none;
+    .experience-card li::marker {
+      color: var(--teal);
+    }
+
+    /* RECOGNITION */
+
+    .recognition-grid {
       display: grid;
-      gap: 13px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
     }
 
-    .achievement-list li {
+    .recognition-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 16px 20px;
-      color: var(--muted);
+      border-radius: 18px;
+      padding: 22px;
+      min-height: 105px;
     }
+
+    .recognition-card strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .recognition-card p {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    /* EDUCATION */
 
     .education-grid {
       display: grid;
@@ -218,12 +408,13 @@
     .education-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 20px;
+      border-radius: 18px;
+      padding: 23px;
     }
 
     .education-card strong {
       display: block;
+      font-size: 1.08rem;
       margin-bottom: 5px;
     }
 
@@ -231,26 +422,61 @@
       color: var(--muted);
     }
 
-    .skills-box {
+    /* SKILLS */
+
+    .skills-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .skills-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 25px;
+      border-radius: 20px;
+      padding: 26px;
+    }
+
+    .skills-card h3 {
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+
+    .skills-card p {
       color: var(--muted);
     }
 
-    .language-row {
-      display: flex;
-      gap: 35px;
-      flex-wrap: wrap;
+    /* CONTACT */
+
+    .contact-box {
+      background: var(--accent-light);
+      border-radius: 25px;
+      padding: 45px;
+      text-align: center;
     }
 
-    .language {
+    .contact-box p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 12px auto 25px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-link {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 16px 20px;
+      border-radius: 999px;
+      padding: 10px 17px;
+      font-size: 0.9rem;
     }
+
+    /* FOOTER */
 
     footer {
       border-top: 1px solid var(--border);
@@ -258,33 +484,68 @@
     }
 
     .footer-inner {
-      max-width: var(--max-width);
+      max-width: var(--max);
       margin: auto;
-      padding: 35px 24px 45px;
+      padding: 32px 24px 42px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
       color: var(--muted);
-      font-size: 0.9rem;
-      text-align: center;
+      font-size: 0.84rem;
     }
 
-    @media (max-width: 700px) {
+    /* RESPONSIVE */
+
+    @media (max-width: 800px) {
+      .hero-grid,
+      .about-grid,
+      .skills-section {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        text-align: center;
+      }
+
+      .profile-photo,
+      .photo-fallback {
+        margin: auto;
+      }
+
+      .hero-text {
+        margin: auto;
+      }
+
       .nav-links {
         display: none;
       }
 
-      header {
-        padding-top: 65px;
+      .recognition-grid,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(var(--max), calc(100% - 32px));
+      }
+
+      .hero {
+        padding: 60px 0;
       }
 
       section {
-        padding: 50px 20px;
+        padding: 55px 0;
       }
 
-      .experience-item {
-        padding: 23px;
-      }
-
-      .education-grid {
-        grid-template-columns: 1fr;
+      .contact-box {
+        padding: 30px 20px;
       }
     }
   </style>
@@ -292,232 +553,528 @@
 
 <body>
 
+  <!-- NAVIGATION -->
   <nav>
     <div class="nav-inner">
       <a href="#" class="nav-name">Pamela Alejandra Pardini</a>
 
       <div class="nav-links">
-        <a href="#summary">About</a>
+        <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#recognition">Recognition</a>
         <a href="#education">Education</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          ◐
+        </button>
       </div>
     </div>
   </nav>
 
-  <header>
-    <div class="eyebrow">Technical Project Manager · R&D · DeepTech & MedTech · Photonics</div>
 
-    <h1>Pamela Alejandra Pardini</h1>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
 
-    <div class="hero-role">
-      Technical Project Manager | R&D | DeepTech & MedTech | Photonics
-    </div>
+      <!--
+        PHOTO:
+        Replace "profile.jpg" with the exact filename of your photo
+        once you upload it to the same GitHub folder as index.html.
+      -->
+      <img
+        src="profile.jpg"
+        alt="Pamela Alejandra Pardini"
+        class="profile-photo"
+        onerror="this.style.display='none'; document.getElementById('photoFallback').style.display='flex';"
+      >
 
-    <p class="hero-description">
-      Technical Project Manager and R&D professional with 13+ years of experience across DeepTech, MedTech, photonics, and applied research. Experienced in coordinating complex technology development projects from concept through validation, working across engineering, scientific, clinical, and external stakeholder groups. Strong background in project planning, cross-functional coordination, technology development, stakeholder management, and translating advanced research into practical healthcare and technology solutions.
-    </p>
+      <div
+        id="photoFallback"
+        class="photo-fallback"
+        style="display:none;"
+        aria-hidden="true"
+      >
+        PP
+      </div>
 
-    <div class="hero-meta">
-      Italian & Argentine Citizen | Willing to relocate | 
-      <a href="tel:+34670470921">+34 670 47 09 21</a> |
-      <a href="mailto:pardinipamela@gmail.com">pardinipamela@gmail.com</a> |
-      <a href="https://www.linkedin.com/in/pamelapardini/" target="_blank">LinkedIn</a>
+      <div>
+        <div class="eyebrow">Open to new opportunities</div>
+
+        <h1>Pamela Alejandra Pardini</h1>
+
+        <div class="hero-title">
+          Technical Project Manager | R&amp;D | DeepTech &amp; MedTech | Photonics
+        </div>
+
+        <p class="hero-text">
+          Technical Project Manager and R&amp;D professional with 13+ years of experience across DeepTech, MedTech, photonics, and applied research. Experienced in coordinating complex technology development projects from concept through validation, working across engineering, scientific, clinical, and external stakeholder groups. Strong background in project planning, cross-functional coordination, technology development, stakeholder management, and translating advanced research into practical healthcare and technology solutions.
+        </p>
+
+        <div class="hero-contact">
+          Italian &amp; Argentine Citizen |
+          Willing to relocate |
+          <a href="tel:+34670470921">+34 670 47 09 21</a> |
+          <a href="mailto:pardinipamela@gmail.com">pardinipamela@gmail.com</a> |
+          <a href="https://www.linkedin.com/in/pamelapardini/" target="_blank" rel="noopener">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
     </div>
   </header>
 
-  <section id="summary">
-    <div class="section-label">Professional Summary</div>
-    <h2>Professional Summary</h2>
 
-    <p class="summary">
-      Technical Project Manager and R&D professional with 13+ years of experience across DeepTech, MedTech, photonics, and applied research. Experienced in coordinating complex technology development projects from concept through validation, working across engineering, scientific, clinical, and external stakeholder groups. Strong background in project planning, cross-functional coordination, technology development, stakeholder management, and translating advanced research into practical healthcare and technology solutions.
-    </p>
-  </section>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
 
-  <section id="competencies">
-    <div class="section-label">Core Competencies</div>
-    <h2>Core Competencies</h2>
+      <div class="section-heading">
+        <div class="section-label">Professional Summary</div>
+        <h2>Professional Summary</h2>
+      </div>
 
-    <div class="competencies">
-      <span class="competency">Project & Program Management</span>
-      <span class="competency">R&D Project Execution</span>
-      <span class="competency">Technology & Product Development</span>
-      <span class="competency">Cross-functional Coordination</span>
-      <span class="competency">Stakeholder Management</span>
-      <span class="competency">Project Planning & Milestones</span>
-      <span class="competency">Risk Management</span>
-      <span class="competency">Technical Documentation</span>
-      <span class="competency">Clinical & Research Collaboration</span>
-      <span class="competency">Innovation & Technology Transfer</span>
-      <span class="competency">MedTech</span>
-      <span class="competency">DeepTech</span>
-      <span class="competency">Photonics</span>
+      <div class="about-grid">
+
+        <div class="about-text">
+          <p>
+            Technical Project Manager and R&amp;D professional with 13+ years of experience across DeepTech, MedTech, photonics, and applied research. Experienced in coordinating complex technology development projects from concept through validation, working across engineering, scientific, clinical, and external stakeholder groups. Strong background in project planning, cross-functional coordination, technology development, stakeholder management, and translating advanced research into practical healthcare and technology solutions.
+          </p>
+
+          <p>
+            My background combines applied physics, technology development, project management and entrepreneurial experience across scientific, engineering, clinical and business environments.
+          </p>
+        </div>
+
+        <div class="about-side">
+          <div class="about-side-title">Selected experience</div>
+
+          <div class="about-side-item">
+            <div class="about-side-number">$650K+</div>
+            <div class="about-side-label">Funding secured and managed</div>
+          </div>
+
+          <div class="about-side-item">
+            <div class="about-side-number">3</div>
+            <div class="about-side-label">Clinical pilot programs</div>
+          </div>
+
+          <div class="about-side-item">
+            <div class="about-side-number">3</div>
+            <div class="about-side-label">Hospitals involved in clinical pilots</div>
+          </div>
+
+          <div class="about-side-item">
+            <div class="about-side-number">5–10</div>
+            <div class="about-side-label">Multidisciplinary team members coordinated</div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
+
+  <!-- CORE COMPETENCIES -->
+  <section>
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="section-label">Core Competencies</div>
+        <h2>Core Competencies</h2>
+      </div>
+
+      <div class="chips">
+        <span class="chip">Project &amp; Program Management</span>
+        <span class="chip">R&amp;D Project Execution</span>
+        <span class="chip">Technology &amp; Product Development</span>
+        <span class="chip">Cross-functional Coordination</span>
+        <span class="chip">Stakeholder Management</span>
+        <span class="chip">Project Planning &amp; Milestones</span>
+        <span class="chip">Risk Management</span>
+        <span class="chip">Technical Documentation</span>
+        <span class="chip">Clinical &amp; Research Collaboration</span>
+        <span class="chip">Innovation &amp; Technology Transfer</span>
+        <span class="chip">MedTech</span>
+        <span class="chip">DeepTech</span>
+        <span class="chip">Photonics</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- EXPERIENCE -->
   <section id="experience">
-    <div class="section-label">Professional Experience</div>
-    <h2>Professional Experience</h2>
+    <div class="container">
 
-    <article class="experience-item">
-      <div class="experience-title">R&D Project Manager</div>
-      <div class="experience-company">
-        Mapsi Photonics, DeepTech Startup (Infrared Photonics) · Barcelona, Spain | 2025-2026
+      <div class="section-heading">
+        <div class="section-label">Professional Experience</div>
+        <h2>Professional Experience</h2>
       </div>
 
-      <ul>
-        <li>Coordinated photonics R&D projects ensuring alignment between technical teams and stakeholders, achieving on-time delivery of key milestones.</li>
-        <li>Improved internal-external communication processes, increasing project visibility and execution efficiency.</li>
-        <li>Initiated documentation organization processes to support project traceability and governance</li>
-      </ul>
-    </article>
+      <div class="timeline">
 
-    <article class="experience-item">
-      <div class="experience-title">CEO & Co-founder</div>
-      <div class="experience-company">
-        BIONIRS, MedTech Startup (Breast Cancer Optical Diagnostics) · Argentina / International | 2020-2025
+        <!-- MAPSI -->
+        <article class="experience">
+          <div class="experience-card">
+
+            <div class="experience-role">
+              R&amp;D Project Manager
+            </div>
+
+            <div class="experience-company">
+              Mapsi Photonics, DeepTech Startup (Infrared Photonics) · Barcelona, Spain | 2025-2026
+            </div>
+
+            <ul>
+              <li>
+                Coordinated photonics R&amp;D projects ensuring alignment between technical teams and stakeholders, achieving on-time delivery of key milestones.
+              </li>
+
+              <li>
+                Improved internal-external communication processes, increasing project visibility and execution efficiency.
+              </li>
+
+              <li>
+                Initiated documentation organization processes to support project traceability and governance
+              </li>
+            </ul>
+
+          </div>
+        </article>
+
+
+        <!-- BIONIRS -->
+        <article class="experience">
+          <div class="experience-card">
+
+            <div class="experience-role">
+              CEO &amp; Co-founder
+            </div>
+
+            <div class="experience-company">
+              BIONIRS, MedTech Startup (Breast Cancer Optical Diagnostics) · Argentina / International | 2020-2025
+            </div>
+
+            <ul>
+              <li>
+                Co-founded and led the development of an optical diagnostic technology for breast cancer, taking the technology from early-stage research through development, validation and clinical application.
+              </li>
+
+              <li>
+                Secured and managed $650K+ in funding for technology development, clinical validation and company operations, coordinating budgets, milestones, deliverables and reporting.
+              </li>
+
+              <li>
+                Led 3 clinical pilot programs across 3 hospitals, coordinating clinical, scientific and technical teams and translating clinical requirements into development priorities.
+              </li>
+
+              <li>
+                Built and managed collaborations with hospitals, research institutions, technology partners and innovation programs, establishing agreements to support technology development and validation.
+              </li>
+
+              <li>
+                Coordinated multidisciplinary teams of 5-10 people across physics, engineering, software, clinical research and business activities.
+              </li>
+
+              <li>
+                Managed the end-to-end project lifecycle, from technical development and planning through validation, partnerships, fundraising and stakeholder management.
+              </li>
+
+              <li>
+                Contributed to IP strategy, technology transfer and patent activities, including international patent applications.
+              </li>
+
+              <li>
+                Prepared technical, strategic and funding materials for investors, partners, hospitals, institutions and funding bodies.
+              </li>
+
+              <li>
+                Translated complex scientific and technical concepts into product requirements, project objectives, development plans and healthcare applications.
+              </li>
+
+              <li>
+                Worked in a highly ambiguous, resource-constrained startup environment, balancing technical, strategic and operational priorities
+              </li>
+            </ul>
+
+          </div>
+        </article>
+
+
+        <!-- RESEARCH -->
+        <article class="experience">
+          <div class="experience-card">
+
+            <div class="experience-role">
+              Researcher &amp; Lecturer
+            </div>
+
+            <div class="experience-company">
+              CONICET / UNCPBA / CNEA, Public Research &amp; Academic Institutions · Argentina | 2012-2023
+            </div>
+
+            <ul>
+              <li>
+                Led applied research projects in photonics and biomedical technologies with focus on healthcare applications and translational science
+              </li>
+
+              <li>
+                Contributed to grant development, interdisciplinary collaboration initiatives, and scientific publication in peer-reviewed journals
+              </li>
+
+              <li>
+                Participated in international scientific collaborations including research at PTB and TU Berlin (DAAD Fellow, Germany)
+              </li>
+            </ul>
+
+          </div>
+        </article>
+
       </div>
-
-      <ul>
-        <li>Co-founded and led the development of an optical diagnostic technology for breast cancer, taking the technology from early-stage research through development, validation and clinical application.</li>
-        <li>Secured and managed $650K+ in funding for technology development, clinical validation and company operations, coordinating budgets, milestones, deliverables and reporting.</li>
-        <li>Led 3 clinical pilot programs across 3 hospitals, coordinating clinical, scientific and technical teams and translating clinical requirements into development priorities.</li>
-        <li>Built and managed collaborations with hospitals, research institutions, technology partners and innovation programs, establishing agreements to support technology development and validation.</li>
-        <li>Coordinated multidisciplinary teams of 5-10 people across physics, engineering, software, clinical research and business activities.</li>
-        <li>Managed the end-to-end project lifecycle, from technical development and planning through validation, partnerships, fundraising and stakeholder management.</li>
-        <li>Contributed to IP strategy, technology transfer and patent activities, including international patent applications.</li>
-        <li>Prepared technical, strategic and funding materials for investors, partners, hospitals, institutions and funding bodies.</li>
-        <li>Translated complex scientific and technical concepts into product requirements, project objectives, development plans and healthcare applications.</li>
-        <li>Worked in a highly ambiguous, resource-constrained startup environment, balancing technical, strategic and operational priorities</li>
-      </ul>
-    </article>
-
-    <article class="experience-item">
-      <div class="experience-title">Researcher & Lecturer</div>
-      <div class="experience-company">
-        CONICET / UNCPBA / CNEA, Public Research & Academic Institutions · Argentina | 2012-2023
-      </div>
-
-      <ul>
-        <li>Led applied research projects in photonics and biomedical technologies with focus on healthcare applications and translational science</li>
-        <li>Contributed to grant development, interdisciplinary collaboration initiatives, and scientific publication in peer-reviewed journals</li>
-        <li>Participated in international scientific collaborations including research at PTB and TU Berlin (DAAD Fellow, Germany)</li>
-      </ul>
-    </article>
+    </div>
   </section>
 
+
+  <!-- RECOGNITION -->
   <section id="recognition">
-    <div class="section-label">Key Achievements & Recognition</div>
-    <h2>Key Achievements & Recognition</h2>
+    <div class="container">
 
-    <ul class="achievement-list">
-      <li>
-        Patent Holder: US20220058802A1 & PCT/IL2024/050634 — optical diagnostics for breast cancer detection
-      </li>
+      <div class="section-heading">
+        <div class="section-label">Key Achievements &amp; Recognition</div>
+        <h2>Key Achievements &amp; Recognition</h2>
+      </div>
 
-      <li>
-        Publications in peer-reviewed journals —
-        <a href="https://scholar.google.es/citations?hl=es&user=F-nP-RwAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">
-          GoogleScholar
-        </a>
-      </li>
+      <div class="recognition-grid">
 
-      <li>
-        Finalist — Women's Health Innovation Summit, Boston (2024)
-      </li>
+        <div class="recognition-card">
+          <strong>Patent Holder</strong>
+          <p>
+            US20220058802A1 &amp; PCT/IL2024/050634 — optical diagnostics for breast cancer detection
+          </p>
+        </div>
 
-      <li>
-        Top 5 —
-        <a href="https://www.youtube.com/watch?v=g9h8BNQhIp8&t=36s" target="_blank">
-          Female Founder Challenge
-        </a>,
-        VivaTech, Paris (2024)
-      </li>
+        <div class="recognition-card">
+          <strong>Publications</strong>
+          <p>
+            Publications in peer-reviewed journals —
+            <a href="https://scholar.google.es/citations?hl=es&amp;user=F-nP-RwAAAAJ&amp;view_op=list_works&amp;sortby=pubdate"
+               target="_blank"
+               rel="noopener">
+              GoogleScholar
+            </a>
+          </p>
+        </div>
 
-      <li>
-        AWS Elevate Program — Women Founders LATAM (2023)
-      </li>
+        <div class="recognition-card">
+          <strong>Finalist</strong>
+          <p>
+            Women's Health Innovation Summit, Boston (2024)
+          </p>
+        </div>
 
-      <li>
-        Giambiagi Award 2020 — Best Experimental Physics Thesis, Argentina
-      </li>
-    </ul>
+        <div class="recognition-card">
+          <strong>Top 5</strong>
+          <p>
+            <a href="https://www.youtube.com/watch?v=g9h8BNQhIp8&amp;t=36s"
+               target="_blank"
+               rel="noopener">
+              Female Founder Challenge
+            </a>,
+            VivaTech, Paris (2024)
+          </p>
+        </div>
+
+        <div class="recognition-card">
+          <strong>AWS Elevate Program</strong>
+          <p>
+            Women Founders LATAM (2023)
+          </p>
+        </div>
+
+        <div class="recognition-card">
+          <strong>Giambiagi Award 2020</strong>
+          <p>
+            Best Experimental Physics Thesis, Argentina
+          </p>
+        </div>
+
+      </div>
+    </div>
   </section>
 
+
+  <!-- EDUCATION -->
   <section id="education">
-    <div class="section-label">Education & Training</div>
-    <h2>Education & Training</h2>
+    <div class="container">
 
-    <div class="education-grid">
-      <div class="education-card">
-        <strong>PhD in Physical Sciences</strong>
-        <span>UNCPBA, Argentina (2018)</span>
+      <div class="section-heading">
+        <div class="section-label">Education &amp; Training</div>
+        <h2>Education &amp; Training</h2>
       </div>
 
-      <div class="education-card">
-        <strong>MSc in Physical Sciences</strong>
-        <span>UNCPBA, Argentina (2012)</span>
-      </div>
+      <div class="education-grid">
 
-      <div class="education-card">
-        <strong>Project Management</strong>
-        <span>UTN (2023)</span>
-      </div>
+        <div class="education-card">
+          <strong>PhD in Physical Sciences</strong>
+          <span>UNCPBA, Argentina (2018)</span>
+        </div>
 
-      <div class="education-card">
-        <strong>Open Innovation in Healthcare</strong>
-        <span>Fundación Barceló (2024)</span>
+        <div class="education-card">
+          <strong>MSc in Physical Sciences</strong>
+          <span>UNCPBA, Argentina (2012)</span>
+        </div>
+
+        <div class="education-card">
+          <strong>Project Management</strong>
+          <span>UTN (2023)</span>
+        </div>
+
+        <div class="education-card">
+          <strong>Open Innovation in Healthcare</strong>
+          <span>Fundación Barceló (2024)</span>
+        </div>
+
       </div>
     </div>
   </section>
 
+
+  <!-- SKILLS -->
   <section id="skills">
-    <div class="section-label">Technical Skills & Tools</div>
-    <h2>Technical Skills & Tools</h2>
+    <div class="container">
 
-    <div class="skills-box">
-      Project Management | R&D Management | Product Development | Technical Documentation | Stakeholder Management | Risk & Milestone Tracking | Notion | ClickUp | Jira | Google Workspace | ChatGPT | Claude
+      <div class="section-heading">
+        <div class="section-label">Technical Skills &amp; Tools</div>
+        <h2>Technical Skills &amp; Tools</h2>
+      </div>
+
+      <div class="skills-section">
+
+        <div class="skills-card">
+          <h3>Technical Skills &amp; Tools</h3>
+
+          <div class="chips">
+            <span class="chip">Project Management</span>
+            <span class="chip">R&amp;D Management</span>
+            <span class="chip">Product Development</span>
+            <span class="chip">Technical Documentation</span>
+            <span class="chip">Stakeholder Management</span>
+            <span class="chip">Risk &amp; Milestone Tracking</span>
+            <span class="chip">Notion</span>
+            <span class="chip">ClickUp</span>
+            <span class="chip">Jira</span>
+            <span class="chip">Google Workspace</span>
+            <span class="chip">ChatGPT</span>
+            <span class="chip">Claude</span>
+          </div>
+        </div>
+
+
+        <div class="skills-card">
+          <h3>Focus Areas</h3>
+
+          <p>
+            DeepTech &amp; MedTech · Photonics · Technology Development · Product Development · Clinical &amp; Research Collaboration · Innovation &amp; Technology Transfer · Project &amp; Program Management
+          </p>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <section id="languages">
-    <div class="section-label">Languages</div>
-    <h2>Languages</h2>
 
-    <div class="language-row">
-      <div class="language">
-        <strong>Spanish</strong> — Native
+  <!-- LANGUAGES -->
+  <section>
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="section-label">Languages</div>
+        <h2>Languages</h2>
       </div>
 
-      <div class="language">
-        <strong>English</strong> — C1 (Professional)
+      <div class="chips">
+        <span class="chip"><strong>Spanish</strong> — Native</span>
+        <span class="chip"><strong>English</strong> — C1 (Professional)</span>
       </div>
+
     </div>
   </section>
 
+
+  <!-- CONTACT -->
   <section id="contact">
-    <div class="section-label">Contact</div>
-    <h2>Contact</h2>
+    <div class="container">
 
-    <p class="summary">
-      Italian & Argentine Citizen | Willing to relocate
-    </p>
+      <div class="contact-box">
 
-    <p style="margin-top: 15px;">
-      <a href="mailto:pardinipamela@gmail.com">pardinipamela@gmail.com</a>
-      &nbsp;·&nbsp;
-      <a href="https://www.linkedin.com/in/pamelapardini/" target="_blank">LinkedIn</a>
-    </p>
+        <div class="section-label">Contact</div>
+
+        <h2>Let's connect</h2>
+
+        <p>
+          Italian &amp; Argentine Citizen | Willing to relocate
+        </p>
+
+        <div class="contact-links">
+
+          <a class="contact-link" href="mailto:pardinipamela@gmail.com">
+            ✉ Email
+          </a>
+
+          <a class="contact-link"
+             href="https://www.linkedin.com/in/pamelapardini/"
+             target="_blank"
+             rel="noopener">
+            LinkedIn
+          </a>
+
+          <a class="contact-link"
+             href="https://scholar.google.es/citations?hl=es&amp;user=F-nP-RwAAAAJ&amp;view_op=list_works&amp;sortby=pubdate"
+             target="_blank"
+             rel="noopener">
+            Google Scholar
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
   </section>
 
+
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      Pamela Alejandra Pardini · Technical Project Manager | R&D | DeepTech & MedTech | Photonics
+      <span>Pamela Alejandra Pardini</span>
+      <span>Technical Project Manager | R&amp;D | DeepTech &amp; MedTech | Photonics</span>
     </div>
   </footer>
+
+
+  <script>
+    const toggle = document.getElementById("themeToggle");
+
+    toggle.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+
+      if (current === "dark") {
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("theme", "light");
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+      }
+    });
+
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  </script>
 
 </body>
 </html>
