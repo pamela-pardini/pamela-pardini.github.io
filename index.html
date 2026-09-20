@@ -1,15 +1,24 @@
-<<!DOCTYPE html>
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pamela Pardini, PhD — DeepTech & MedTech</title>
-  <meta name="description" content="Portfolio of Pamela Pardini — PhD in Physics, Project Manager in DeepTech and MedTech, STEM Leader. Based in Barcelona, open to relocation." />
+
+  <title>Pamela Alejandra Pardini, PhD — Technical Project Manager</title>
+
+  <meta name="description" content="Portfolio of Pamela Alejandra Pardini — PhD in Physics and Technical Project Manager with experience across R&D, DeepTech, MedTech and photonics." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --purple: #7F77DD;
@@ -18,7 +27,6 @@
       --purple-light: #EEEDFE;
       --purple-soft: #CECBF6;
       --teal: #1D9E75;
-      --teal-light: #E1F5EE;
       --bg: #ffffff;
       --bg-secondary: #f7f7f8;
       --text: #1a1a1f;
@@ -40,165 +48,530 @@
       }
     }
 
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
 
     /* NAV */
+
     nav {
-      position: sticky; top: 0;
+      position: sticky;
+      top: 0;
       background: var(--bg);
       border-bottom: 0.5px solid var(--border);
-      padding: 0 2rem; height: 56px;
-      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       z-index: 100;
       backdrop-filter: blur(8px);
     }
-    .nav-name { font-size: 14px; font-weight: 600; color: var(--purple-dark); }
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-    .nav-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--purple); }
 
-    .container { max-width: 740px; margin: 0 auto; padding: 0 2rem; }
+    .nav-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--purple-dark);
+    }
 
-    section { padding: 4rem 0; border-bottom: 0.5px solid var(--border); }
-    section:last-child { border-bottom: none; }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--purple);
+    }
+
+    .container {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 4rem 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    section:last-child {
+      border-bottom: none;
+    }
 
     .section-label {
-      font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--purple-dark); margin-bottom: 1.5rem;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple-dark);
+      margin-bottom: 1.5rem;
     }
 
     /* HERO */
-    #hero { padding: 5rem 0 4rem; }
-    .hero-inner { display: flex; gap: 2.5rem; align-items: flex-start; flex-wrap: wrap; }
+
+    #hero {
+      padding: 5rem 0 4rem;
+    }
+
+    .hero-inner {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
     .hero-photo {
-      width: 110px; height: 110px; border-radius: 50%;
-      object-fit: cover; flex-shrink: 0;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
       border: 3px solid var(--purple-soft);
     }
+
     .hero-initials {
-      width: 110px; height: 110px; border-radius: 50%;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
       background: var(--purple-light);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 28px; font-weight: 600; color: var(--purple-dark);
-      flex-shrink: 0; border: 3px solid var(--purple-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--purple-dark);
+      flex-shrink: 0;
+      border: 3px solid var(--purple-soft);
     }
-    .hero-content { flex: 1; min-width: 260px; }
+
+    .hero-content {
+      flex: 1;
+      min-width: 260px;
+    }
+
     .hero-tag {
-      display: inline-block; font-size: 12px; font-weight: 500;
-      color: var(--purple-dark); background: var(--purple-light);
-      padding: 4px 12px; border-radius: 999px; margin-bottom: 1rem;
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--purple-dark);
+      background: var(--purple-light);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 1rem;
     }
-    h1 { font-size: 38px; font-weight: 600; line-height: 1.15; color: var(--text); margin-bottom: 0.4rem; }
-    .hero-subtitle { font-size: 16px; color: var(--text-secondary); margin-bottom: 1rem; }
-    .hero-desc { font-size: 15px; color: var(--text-secondary); max-width: 540px; margin-bottom: 1.75rem; line-height: 1.8; }
-    .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 1.25rem; }
+
+    h1 {
+      font-size: 38px;
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin-bottom: 1.75rem;
+      line-height: 1.8;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .btn-primary,
+    .btn-outline,
+    .btn-teal {
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
 
     .btn-primary {
-      background: var(--purple-dark); color: white; border: none;
-      padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 500;
-      cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
-      transition: background 0.2s;
+      background: var(--purple-dark);
+      color: white;
+      border: none;
+      font-weight: 500;
     }
-    .btn-primary:hover { background: var(--purple-deep); }
-    .btn-outline {
-      background: transparent; color: var(--text);
-      border: 0.5px solid var(--border);
-      padding: 10px 20px; border-radius: 8px; font-size: 14px;
-      cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
-      transition: background 0.2s;
-    }
-    .btn-outline:hover { background: var(--bg-secondary); }
-    .btn-teal {
-      background: var(--teal); color: white; border: none;
-      padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 500;
-      cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
-      transition: background 0.2s;
-    }
-    .btn-teal:hover { background: #0F6E56; }
 
-    .hero-location { font-size: 13px; color: var(--text-tertiary); display: flex; align-items: center; gap: 5px; }
-    .hero-location span { color: var(--purple); }
+    .btn-primary:hover {
+      background: var(--purple-deep);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 0.5px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      background: var(--bg-secondary);
+    }
+
+    .btn-teal {
+      background: var(--teal);
+      color: white;
+      border: none;
+      font-weight: 500;
+    }
+
+    .btn-teal:hover {
+      background: #0F6E56;
+    }
+
+    .hero-location {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .hero-location span {
+      color: var(--purple);
+    }
 
     /* ABOUT */
-    .about-text { font-size: 15px; color: var(--text-secondary); line-height: 1.85; max-width: 600px; }
-    .about-text strong { color: var(--text); font-weight: 500; }
+
+    .about-text {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      max-width: 620px;
+    }
+
+    .about-text strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* HIGHLIGHTS */
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+    }
+
+    .highlight-card {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 18px;
+      border: 0.5px solid var(--border);
+    }
+
+    .highlight-number {
+      font-size: 25px;
+      font-weight: 600;
+      color: var(--purple-dark);
+      line-height: 1.2;
+    }
+
+    .highlight-label {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-top: 5px;
+      line-height: 1.45;
+    }
 
     /* EXPERIENCE */
-    .exp-item { margin-bottom: 2rem; }
-    .exp-item:last-child { margin-bottom: 0; }
-    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 6px; margin-bottom: 4px; }
-    .exp-role { font-size: 16px; font-weight: 500; color: var(--text); }
-    .exp-period { font-size: 12px; color: var(--purple-dark); background: var(--purple-light); padding: 3px 10px; border-radius: 999px; }
-    .exp-company { font-size: 13px; color: var(--text-tertiary); margin-bottom: 10px; }
-    .exp-bullets { list-style: none; }
-    .exp-bullets li { font-size: 14px; color: var(--text-secondary); padding: 3px 0 3px 18px; position: relative; line-height: 1.65; }
-    .exp-bullets li::before { content: "—"; position: absolute; left: 0; color: var(--purple-soft); }
-    .exp-divider { height: 0.5px; background: var(--border); margin: 1.75rem 0; }
+
+    .exp-item {
+      margin-bottom: 2rem;
+    }
+
+    .exp-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    .exp-role {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .exp-period {
+      font-size: 12px;
+      color: var(--purple-dark);
+      background: var(--purple-light);
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    .exp-company {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      margin-bottom: 10px;
+    }
+
+    .exp-bullets {
+      list-style: none;
+    }
+
+    .exp-bullets li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      padding: 3px 0 3px 18px;
+      position: relative;
+      line-height: 1.65;
+    }
+
+    .exp-bullets li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--purple-soft);
+    }
+
+    .exp-divider {
+      height: 0.5px;
+      background: var(--border);
+      margin: 1.75rem 0;
+    }
 
     /* ACHIEVEMENTS */
-    .ach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+
+    .ach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
     .ach-card {
-      background: var(--bg-secondary); border-radius: 12px; padding: 18px;
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 18px;
       border: 0.5px solid var(--border);
       transition: border-color 0.2s, transform 0.2s;
-      text-decoration: none; display: block; color: inherit;
+      text-decoration: none;
+      display: block;
+      color: inherit;
     }
-    .ach-card:hover { border-color: var(--purple-soft); transform: translateY(-2px); }
-    .ach-card.no-link { cursor: default; }
-    .ach-card.no-link:hover { transform: none; border-color: var(--border); }
-    .ach-icon { font-size: 22px; margin-bottom: 8px; }
-    .ach-title { font-size: 14px; font-weight: 500; color: var(--text); line-height: 1.4; }
-    .ach-sub { font-size: 12px; color: var(--text-tertiary); margin-top: 3px; }
-    .ach-link { font-size: 11px; color: var(--purple); margin-top: 6px; display: inline-block; }
+
+    .ach-card:hover {
+      border-color: var(--purple-soft);
+      transform: translateY(-2px);
+    }
+
+    .ach-card.no-link {
+      cursor: default;
+    }
+
+    .ach-card.no-link:hover {
+      transform: none;
+      border-color: var(--border);
+    }
+
+    .ach-icon {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .ach-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .ach-sub {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-top: 3px;
+    }
+
+    .ach-link {
+      font-size: 11px;
+      color: var(--purple);
+      margin-top: 6px;
+      display: inline-block;
+    }
 
     /* SKILLS */
-    .skills-wrap { display: flex; flex-direction: column; gap: 18px; }
-    .skill-group-title { font-size: 13px; font-weight: 500; color: var(--text-secondary); margin-bottom: 8px; }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .skill-tag {
-      font-size: 13px; color: var(--purple-deep); background: var(--purple-light);
-      padding: 5px 13px; border-radius: 999px;
+
+    .skills-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
     }
+
+    .skill-group-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-tag {
+      font-size: 13px;
+      color: var(--purple-deep);
+      background: var(--purple-light);
+      padding: 5px 13px;
+      border-radius: 999px;
+    }
+
     @media (prefers-color-scheme: dark) {
-      .skill-tag { color: var(--purple-soft); }
+      .skill-tag {
+        color: var(--purple-soft);
+      }
     }
 
     /* CONTACT */
-    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
     .contact-card {
-      background: var(--bg-secondary); border: 0.5px solid var(--border);
-      border-radius: 10px; padding: 14px 16px;
-      display: flex; align-items: center; gap: 12px;
-      text-decoration: none; color: var(--text);
+      background: var(--bg-secondary);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
       transition: border-color 0.2s, transform 0.2s;
     }
-    .contact-card:hover { border-color: var(--purple-soft); transform: translateY(-1px); }
-    .contact-icon { font-size: 22px; }
-    .contact-label { font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; }
-    .contact-value { font-size: 13px; font-weight: 500; color: var(--purple-dark); }
-    @media (prefers-color-scheme: dark) { .contact-value { color: var(--purple-soft); } }
+
+    .contact-card:hover {
+      border-color: var(--purple-soft);
+      transform: translateY(-1px);
+    }
+
+    .contact-icon {
+      font-size: 22px;
+    }
+
+    .contact-label {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .contact-value {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--purple-dark);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .contact-value {
+        color: var(--purple-soft);
+      }
+    }
 
     /* FOOTER */
-    footer { padding: 2rem; text-align: center; font-size: 12px; color: var(--text-tertiary); border-top: 0.5px solid var(--border); }
-    .footer-dot { margin: 0 6px; }
+
+    footer {
+      padding: 2rem;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      border-top: 0.5px solid var(--border);
+    }
+
+    .footer-dot {
+      margin: 0 6px;
+    }
 
     /* RESPONSIVE */
+
     @media (max-width: 600px) {
-      h1 { font-size: 28px; }
-      nav { padding: 0 1rem; }
-      .nav-links { display: none; }
-      .container { padding: 0 1.25rem; }
-      section { padding: 2.5rem 0; }
-      #hero { padding: 3rem 0 2.5rem; }
-      .hero-inner { flex-direction: column; gap: 1.5rem; }
+      h1 {
+        font-size: 28px;
+      }
+
+      nav {
+        padding: 0 1rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .container {
+        padding: 0 1.25rem;
+      }
+
+      section {
+        padding: 2.5rem 0;
+      }
+
+      #hero {
+        padding: 3rem 0 2.5rem;
+      }
+
+      .hero-inner {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .highlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   </style>
 </head>
+
 <body>
+
+  <!-- NAV -->
 
   <nav>
     <span class="nav-name">Pamela Pardini</span>
+
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -208,227 +581,729 @@
     </ul>
   </nav>
 
+
   <div class="container">
 
     <!-- HERO -->
+
     <section id="hero">
+
       <div class="hero-inner">
-        <!-- Si tienes foto, guárdala como foto.jpg en la misma carpeta que index.html -->
-        <img src="foto.png" alt="Pamela Pardini" class="hero-photo"
-          onerror="this.style.display='none'; document.getElementById('initials').style.display='flex';" />
-        <div class="hero-initials" id="initials" style="display:none;">PP</div>
+
+        <img
+          src="foto.png"
+          alt="Pamela Pardini"
+          class="hero-photo"
+          onerror="this.style.display='none'; document.getElementById('initials').style.display='flex';"
+        />
+
+        <div class="hero-initials" id="initials" style="display:none;">
+          PP
+        </div>
 
         <div class="hero-content">
-          <div class="hero-tag">✦ Open to new opportunities</div>
-          <h1>Pamela Pardini</h1>
-          <p class="hero-subtitle">PhD in Physics &nbsp;·&nbsp; Project Manager &nbsp;·&nbsp; DeepTech & MedTech</p>
-          <p class="hero-desc">Strategic R&D leader combining deep scientific expertise with entrepreneurial execution. I translate complex science into scalable, patient-centred solutions.</p>
-          <div class="hero-btns">
-            <a href="mailto:pardinipamela@gmail.com" class="btn-primary">✉ Contact me</a>
-            <a href="https://www.linkedin.com/in/pamelapardini/" target="_blank" class="btn-outline">in LinkedIn</a>
-            <a href="https://scholar.google.es/citations?user=F-nP-RwAAAAJ&hl=es&oi=ao" target="_blank" class="btn-teal">◎ Publications</a>
+
+          <div class="hero-tag">
+            ✦ Open to new opportunities
           </div>
-          <p class="hero-location">📍 Barcelona, Spain &nbsp;·&nbsp; <span>Open to relocation</span></p>
+
+          <h1>Pamela Alejandra Pardini</h1>
+
+          <p class="hero-subtitle">
+            PhD in Physics &nbsp;·&nbsp; Technical Project Manager &nbsp;·&nbsp; R&D, DeepTech & MedTech
+          </p>
+
+          <p class="hero-desc">
+            Technical Project Manager and PhD in Physics working at the intersection of
+            science, technology and project execution. I coordinate complex R&D initiatives
+            across scientific, engineering, clinical and external stakeholder teams,
+            translating advanced technologies into practical solutions.
+          </p>
+
+          <div class="hero-btns">
+
+            <a href="mailto:pardinipamela@gmail.com" class="btn-primary">
+              ✉ Contact me
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/pamelapardini/"
+              target="_blank"
+              class="btn-outline"
+            >
+              in LinkedIn
+            </a>
+
+            <a
+              href="https://scholar.google.es/citations?user=F-nP-RwAAAAJ&hl=es&oi=ao"
+              target="_blank"
+              class="btn-teal"
+            >
+              ◎ Publications
+            </a>
+
+          </div>
+
+          <p class="hero-location">
+            📍 Spain &nbsp;·&nbsp;
+            <span>Italian & EU Citizen · Open to relocation</span>
+          </p>
+
         </div>
+
       </div>
+
     </section>
+
 
     <!-- ABOUT -->
+
     <section id="about">
-      <div class="section-label">About</div>
+
+      <div class="section-label">
+        About
+      </div>
+
       <p class="about-text">
-        I'm a physicist turned entrepreneur turned R&D project manager with <strong>13+ years of experience</strong> across academia, MedTech, and DeepTech. I co-founded <strong>BIONIRS</strong>, where I led the end-to-end development of a patented optical diagnostic device for breast cancer — from bench to clinical pilot in 18 months. I thrive at the intersection of rigorous science, cross-functional teams, and real-world impact.
+
+        I'm a physicist turned entrepreneur turned R&D project manager with
+        <strong>13+ years of experience</strong> across academia, MedTech, DeepTech
+        and photonics.
+
+        I co-founded <strong>BIONIRS</strong>, an optical breast cancer diagnostics
+        company, where I led technology development from early-stage research through
+        clinical validation. The project involved <strong>$650K+ in funding,
+        3 clinical pilots across 3 hospitals, and multidisciplinary teams of
+        5–10 people</strong>, alongside partnerships with hospitals, research
+        institutions and technology partners.
+
+        <br><br>
+
+        I enjoy working across technical and non-technical teams, bringing structure
+        to complex projects and translating scientific and engineering challenges
+        into clear priorities, plans and deliverables.
+
       </p>
+
     </section>
+
+
+    <!-- HIGHLIGHTS -->
+
+    <section id="highlights">
+
+      <div class="section-label">
+        At a glance
+      </div>
+
+      <div class="highlight-grid">
+
+        <div class="highlight-card">
+          <div class="highlight-number">$650K+</div>
+          <div class="highlight-label">
+            R&D funding secured and managed
+          </div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-number">3</div>
+          <div class="highlight-label">
+            Clinical pilot programs
+          </div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-number">3</div>
+          <div class="highlight-label">
+            Hospitals involved in clinical validation
+          </div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-number">5–10</div>
+          <div class="highlight-label">
+            Multidisciplinary team members coordinated
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
 
     <!-- EXPERIENCE -->
+
     <section id="experience">
-      <div class="section-label">Experience</div>
+
+      <div class="section-label">
+        Experience
+      </div>
+
+
+      <!-- MAPSI -->
 
       <div class="exp-item">
+
         <div class="exp-header">
-          <span class="exp-role">R&D Project Manager</span>
-          <span class="exp-period">2025 – 2026</span>
+
+          <span class="exp-role">
+            R&D Project Manager
+          </span>
+
+          <span class="exp-period">
+            2025 – 2026
+          </span>
+
         </div>
-        <div class="exp-company">Mapsi Photonics — DeepTech (Infrared Photonics) · Barcelona</div>
+
+        <div class="exp-company">
+          Mapsi Photonics — DeepTech (Infrared Photonics) · Barcelona
+        </div>
+
         <ul class="exp-bullets">
-          <li>Built task management systems and operational workflows across R&D and business areas from scratch</li>
-          <li>Supported technical and financial reporting for public funding programmes</li>
-          <li>Initiated documentation processes to support project traceability and governance</li>
+
+          <li>
+            Coordinated photonics R&D projects across technical, engineering,
+            manufacturing and external stakeholder teams.
+          </li>
+
+          <li>
+            Translated project objectives into work plans, milestones,
+            deliverables, KPIs and risk-monitoring frameworks.
+          </li>
+
+          <li>
+            Coordinated multiple workstreams and dependencies, identifying
+            blockers and supporting teams in maintaining project priorities
+            and timelines.
+          </li>
+
+          <li>
+            Managed technical documentation, reporting and project follow-up
+            for publicly funded R&D projects.
+          </li>
+
+          <li>
+            Improved project documentation and communication processes,
+            increasing visibility of project status, responsibilities and
+            pending actions.
+          </li>
+
         </ul>
+
       </div>
+
 
       <div class="exp-divider"></div>
 
+
+      <!-- BIONIRS -->
+
       <div class="exp-item">
+
         <div class="exp-header">
-          <span class="exp-role">CEO & Co-founder</span>
-          <span class="exp-period">2020 – 2025</span>
+
+          <span class="exp-role">
+            CEO & Co-founder
+          </span>
+
+          <span class="exp-period">
+            2020 – 2025
+          </span>
+
         </div>
-        <div class="exp-company">BIONIRS — MedTech Startup · Argentina / International</div>
+
+        <div class="exp-company">
+          BIONIRS — MedTech Startup (Optical Breast Cancer Diagnostics) · Argentina / International
+        </div>
+
         <ul class="exp-bullets">
-          <li>Led clinical validation of a patented optical diagnostic device from feasibility to hospital pilot in 18 months</li>
-          <li>Secured and managed $650K+ in R&D funding through grants and strategic partnerships</li>
-          <li>Coordinated multidisciplinary teams across physics, engineering, clinical, and regulatory affairs</li>
-          <li>Filed US and PCT patents for core optical diagnostic technology</li>
-          <li>Managed relationships with hospitals, clinicians, research institutions, and international partners</li>
+
+          <li>
+            Co-founded and led the development of an optical diagnostic
+            technology for breast cancer from early-stage research through
+            development, validation and clinical application.
+          </li>
+
+          <li>
+            <strong>Secured and managed $650K+ in funding</strong> for technology
+            development, clinical validation and company operations.
+          </li>
+
+          <li>
+            Led <strong>3 clinical pilot programs across 3 hospitals</strong>,
+            coordinating clinical, scientific and technical teams and
+            translating clinical requirements into development priorities.
+          </li>
+
+          <li>
+            Built collaborations and formal agreements with hospitals,
+            research institutions, technology partners and innovation programs
+            to support technology development and validation.
+          </li>
+
+          <li>
+            Coordinated multidisciplinary teams of <strong>5–10 people</strong>
+            across physics, engineering, software, clinical research and
+            business activities.
+          </li>
+
+          <li>
+            Managed the end-to-end project lifecycle, from technical
+            development and planning through validation, partnerships,
+            fundraising and stakeholder management.
+          </li>
+
+          <li>
+            Contributed to <strong>IP strategy, technology transfer and patent
+            activities</strong>, including international patent applications.
+          </li>
+
+          <li>
+            Prepared technical, strategic and funding materials for investors,
+            partners, hospitals, institutions and funding bodies.
+          </li>
+
+          <li>
+            Translated complex scientific and technical concepts into product
+            requirements, development plans, project objectives and healthcare
+            applications.
+          </li>
+
         </ul>
+
       </div>
+
 
       <div class="exp-divider"></div>
 
+
+      <!-- RESEARCH -->
+
       <div class="exp-item">
+
         <div class="exp-header">
-          <span class="exp-role">Researcher & Lecturer</span>
-          <span class="exp-period">2012 – 2023</span>
+
+          <span class="exp-role">
+            Researcher & Lecturer
+          </span>
+
+          <span class="exp-period">
+            2012 – 2023
+          </span>
+
         </div>
-        <div class="exp-company">CONICET / UNCPBA / CNEA · Argentina</div>
+
+        <div class="exp-company">
+          CONICET / UNCPBA / CNEA · Argentina
+        </div>
+
         <ul class="exp-bullets">
-          <li>Led applied R&D projects in photonics and biomedical technologies</li>
-          <li>DAAD Fellowship — PTB & TU Berlin, Germany</li>
-          <li>Developed grant proposals and managed innovation-driven scientific projects</li>
+
+          <li>
+            Led applied research projects in photonics and biomedical
+            technologies, with a focus on healthcare applications and
+            translational science.
+          </li>
+
+          <li>
+            Contributed to grant development, interdisciplinary collaboration
+            initiatives and scientific publications.
+          </li>
+
+          <li>
+            Participated in international scientific collaborations, including
+            research at PTB and TU Berlin as a DAAD Fellow in Germany.
+          </li>
+
         </ul>
+
       </div>
+
     </section>
+
 
     <!-- RECOGNITION -->
+
     <section id="recognition">
-      <div class="section-label">Recognition</div>
+
+      <div class="section-label">
+        Recognition & Impact
+      </div>
+
       <div class="ach-grid">
 
-        <a href="https://patents.google.com/patent/US20220058802A1" target="_blank" class="ach-card">
+
+        <a
+          href="https://patents.google.com/patent/US20220058802A1"
+          target="_blank"
+          class="ach-card"
+        >
+
           <div class="ach-icon">📄</div>
-          <div class="ach-title">Patent Holder</div>
-          <div class="ach-sub">US20220058802A1 · PCT/IL2024/050634</div>
-          <div class="ach-link">View patent →</div>
+
+          <div class="ach-title">
+            Patent Holder
+          </div>
+
+          <div class="ach-sub">
+            US20220058802A1 · PCT/IL2024/050634
+          </div>
+
+          <div class="ach-link">
+            View patent →
+          </div>
+
         </a>
 
+
         <div class="ach-card no-link">
+
           <div class="ach-icon">🏆</div>
-          <div class="ach-title">Women's Health Innovation Summit</div>
-          <div class="ach-sub">Finalist · Boston 2024</div>
+
+          <div class="ach-title">
+            Women's Health Innovation Summit
+          </div>
+
+          <div class="ach-sub">
+            Finalist · Boston 2024
+          </div>
+
         </div>
 
-        <a href="https://www.youtube.com/watch?v=g9h8BNQhIp8&t=36s" target="_blank" class="ach-card">
+
+        <a
+          href="https://www.youtube.com/watch?v=g9h8BNQhIp8&t=36s"
+          target="_blank"
+          class="ach-card"
+        >
+
           <div class="ach-icon">⭐</div>
-          <div class="ach-title">Female Founder Challenge</div>
-          <div class="ach-sub">Top 5 · VivaTech Paris 2024</div>
-          <div class="ach-link">Watch on YouTube →</div>
+
+          <div class="ach-title">
+            Female Founder Challenge
+          </div>
+
+          <div class="ach-sub">
+            Top 5 · VivaTech Paris 2024
+          </div>
+
+          <div class="ach-link">
+            Watch on YouTube →
+          </div>
+
         </a>
 
+
         <div class="ach-card no-link">
+
           <div class="ach-icon">☁️</div>
-          <div class="ach-title">AWS Elevate Program</div>
-          <div class="ach-sub">Women Founders LATAM 2023</div>
+
+          <div class="ach-title">
+            AWS Elevate Program
+          </div>
+
+          <div class="ach-sub">
+            Women Founders LATAM 2023
+          </div>
+
         </div>
+
 
         <div class="ach-card no-link">
+
           <div class="ach-icon">🔬</div>
-          <div class="ach-title">Giambiagi Award</div>
-          <div class="ach-sub">Best Experimental Physics Thesis · 2020</div>
+
+          <div class="ach-title">
+            Giambiagi Award
+          </div>
+
+          <div class="ach-sub">
+            Best Experimental Physics Thesis · 2020
+          </div>
+
         </div>
 
-        <a href="https://scholar.google.es/citations?user=F-nP-RwAAAAJ&hl=es&oi=ao" target="_blank" class="ach-card">
+
+        <a
+          href="https://scholar.google.es/citations?user=F-nP-RwAAAAJ&hl=es&oi=ao"
+          target="_blank"
+          class="ach-card"
+        >
+
           <div class="ach-icon">📚</div>
-          <div class="ach-title">Peer-reviewed publications</div>
-          <div class="ach-sub">Google Scholar profile</div>
-          <div class="ach-link">View publications →</div>
+
+          <div class="ach-title">
+            Peer-reviewed publications
+          </div>
+
+          <div class="ach-sub">
+            Google Scholar profile
+          </div>
+
+          <div class="ach-link">
+            View publications →
+          </div>
+
         </a>
 
       </div>
+
     </section>
+
 
     <!-- SKILLS -->
+
     <section id="skills">
-      <div class="section-label">Skills</div>
-      <div class="skills-wrap">
-        <div>
-          <div class="skill-group-title">Project management</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Cross-functional teams</span>
-            <span class="skill-tag">R&D pipelines</span>
-            <span class="skill-tag">Stakeholder management</span>
-            <span class="skill-tag">Risk tracking</span>
-            <span class="skill-tag">Technical reporting</span>
-            <span class="skill-tag">Timeline & deliverables</span>
-          </div>
-        </div>
-        <div>
-          <div class="skill-group-title">MedTech & DeepTech</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Medical device R&D</span>
-            <span class="skill-tag">Technology transfer</span>
-            <span class="skill-tag">Clinical pilots</span>
-            <span class="skill-tag">Photonics</span>
-            <span class="skill-tag">Regulatory (MDR)</span>
-            <span class="skill-tag">Open innovation</span>
-          </div>
-        </div>
-        <div>
-          <div class="skill-group-title">Tools & languages</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Notion</span>
-            <span class="skill-tag">ClickUp</span>
-            <span class="skill-tag">Trello</span>
-            <span class="skill-tag">MS Office</span>
-            <span class="skill-tag">Spanish — native</span>
-            <span class="skill-tag">English — fluent</span>
-          </div>
-        </div>
+
+      <div class="section-label">
+        Skills
       </div>
+
+      <div class="skills-wrap">
+
+
+        <div>
+
+          <div class="skill-group-title">
+            Project & Program Management
+          </div>
+
+          <div class="skill-tags">
+
+            <span class="skill-tag">Project planning</span>
+            <span class="skill-tag">Cross-functional teams</span>
+            <span class="skill-tag">R&D project execution</span>
+            <span class="skill-tag">Stakeholder management</span>
+            <span class="skill-tag">Risk management</span>
+            <span class="skill-tag">Milestones & deliverables</span>
+            <span class="skill-tag">Technical reporting</span>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="skill-group-title">
+            Technology & Innovation
+          </div>
+
+          <div class="skill-tags">
+
+            <span class="skill-tag">Technology development</span>
+            <span class="skill-tag">Product development</span>
+            <span class="skill-tag">Technology validation</span>
+            <span class="skill-tag">Technology transfer</span>
+            <span class="skill-tag">Innovation</span>
+            <span class="skill-tag">Photonics</span>
+            <span class="skill-tag">DeepTech</span>
+            <span class="skill-tag">MedTech</span>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="skill-group-title">
+            Clinical & Research
+          </div>
+
+          <div class="skill-tags">
+
+            <span class="skill-tag">Clinical pilots</span>
+            <span class="skill-tag">Biomedical imaging</span>
+            <span class="skill-tag">Research collaboration</span>
+            <span class="skill-tag">Medical device R&D</span>
+            <span class="skill-tag">GCP</span>
+            <span class="skill-tag">Regulatory environment</span>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="skill-group-title">
+            Tools
+          </div>
+
+          <div class="skill-tags">
+
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">ClickUp</span>
+            <span class="skill-tag">Notion</span>
+            <span class="skill-tag">Google Workspace</span>
+            <span class="skill-tag">MS Office</span>
+            <span class="skill-tag">ChatGPT</span>
+            <span class="skill-tag">Claude</span>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="skill-group-title">
+            Languages
+          </div>
+
+          <div class="skill-tags">
+
+            <span class="skill-tag">Spanish — Native</span>
+            <span class="skill-tag">English — C1 Professional</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </section>
 
+
     <!-- CONTACT -->
+
     <section id="contact">
-      <div class="section-label">Contact</div>
-      <div class="contact-grid">
-        <a href="mailto:pardinipamela@gmail.com" class="contact-card">
-          <span class="contact-icon">✉</span>
-          <div>
-            <div class="contact-label">Email</div>
-            <div class="contact-value">pardinipamela@gmail.com</div>
-          </div>
-        </a>
-        <a href="https://www.linkedin.com/in/pamelapardini/" target="_blank" class="contact-card">
-          <span class="contact-icon">in</span>
-          <div>
-            <div class="contact-label">LinkedIn</div>
-            <div class="contact-value">linkedin.com/in/pamelapardini</div>
-          </div>
-        </a>
-        <a href="https://scholar.google.es/citations?user=F-nP-RwAAAAJ&hl=es&oi=ao" target="_blank" class="contact-card">
-          <span class="contact-icon">◎</span>
-          <div>
-            <div class="contact-label">Google Scholar</div>
-            <div class="contact-value">Publications & citations</div>
-          </div>
-        </a>
-        <div class="contact-card" style="cursor:default;">
-          <span class="contact-icon">📍</span>
-          <div>
-            <div class="contact-label">Location</div>
-            <div class="contact-value">Barcelona · Open to relocation</div>
-          </div>
-        </div>
+
+      <div class="section-label">
+        Contact
       </div>
+
+      <div class="contact-grid">
+
+
+        <a
+          href="mailto:pardinipamela@gmail.com"
+          class="contact-card"
+        >
+
+          <span class="contact-icon">✉</span>
+
+          <div>
+
+            <div class="contact-label">
+              Email
+            </div>
+
+            <div class="contact-value">
+              pardinipamela@gmail.com
+            </div>
+
+          </div>
+
+        </a>
+
+
+        <a
+          href="https://www.linkedin.com/in/pamelapardini/"
+          target="_blank"
+          class="contact-card"
+        >
+
+          <span class="contact-icon">
+            in
+          </span>
+
+          <div>
+
+            <div class="contact-label">
+              LinkedIn
+            </div>
+
+            <div class="contact-value">
+              linkedin.com/in/pamelapardini
+            </div>
+
+          </div>
+
+        </a>
+
+
+        <a
+          href="https://scholar.google.es/citations?user=F-nP-RwAAAAJ&hl=es&oi=ao"
+          target="_blank"
+          class="contact-card"
+        >
+
+          <span class="contact-icon">
+            ◎
+          </span>
+
+          <div>
+
+            <div class="contact-label">
+              Google Scholar
+            </div>
+
+            <div class="contact-value">
+              Publications & citations
+            </div>
+
+          </div>
+
+        </a>
+
+
+        <div
+          class="contact-card"
+          style="cursor:default;"
+        >
+
+          <span class="contact-icon">
+            📍
+          </span>
+
+          <div>
+
+            <div class="contact-label">
+              Location
+            </div>
+
+            <div class="contact-value">
+              Spain · Open to relocation
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
     </section>
 
   </div>
 
+
+  <!-- FOOTER -->
+
   <footer>
+
     © 2026 Pamela Pardini
+
     <span class="footer-dot">·</span>
-    <a href="https://www.linkedin.com/in/pamelapardini/" target="_blank" style="color: var(--purple); text-decoration:none;">LinkedIn</a>
+
+    <a
+      href="https://www.linkedin.com/in/pamelapardini/"
+      target="_blank"
+      style="color: var(--purple); text-decoration:none;"
+    >
+      LinkedIn
+    </a>
+
     <span class="footer-dot">·</span>
-    Barcelona, Spain
+
+    Open to opportunities across Europe
+
   </footer>
+
 
 </body>
 </html>
-
-  <footer>
-    © 2026 Pamela Pardini · Built with GitHub Pages
-  </footer>
-
-</body>
-</html>
+```
